@@ -8,6 +8,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:prettier/recommended',
+    'plugin:tailwindcss/recommended',
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
   ],
@@ -18,6 +19,16 @@ module.exports = {
   },
   plugins: ['react', 'simple-import-sort', 'unused-imports'],
   ignorePatterns: ['!.*'],
+  settings: {
+    react: {
+      version: 'detect',
+    },
+    'import/resolver': {
+      node: {
+        paths: ['src'],
+      },
+    },
+  },
   rules: {
     'prettier/prettier': [
       'warn',
@@ -62,7 +73,7 @@ module.exports = {
           // Lib and hooks
           ['^@/lib', '^@/hooks'],
           // static data
-          ['^@/data'],
+          ['^@/content'],
           // components
           ['^@/components', '^@/container'],
           // zustand store
@@ -86,5 +97,6 @@ module.exports = {
       },
     ],
     // #endregion  //*======== Import Sort ===========
+    'tailwindcss/no-custom-classname': ['off'],
   },
 };

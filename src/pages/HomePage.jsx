@@ -1,43 +1,26 @@
+import Layout, { Banner } from '@/components/layout';
 import {
   About,
-  Blogs,
-  Cards,
+  Content,
   Courses,
   Events,
-  FAQ,
-  Header,
-  JoinUs,
+  Hero,
   Mentorship,
-  NewsLetter,
-  Partner,
-  Podcast,
-  Stats,
-  Testimonials,
-  Work,
-} from '../components/home';
-import Banner from '../components/layout/Banner';
-import Footer from '../components/layout/Footer';
-import Navbar from '../components/layout/Header';
+} from '@/components/PageComp/HomePage';
+
+import { HomePageContent } from './content';
+
 const HomePage = () => {
   return (
     <>
-      <Navbar />
-      <Header />
-      <About background='gradient' />
-      <Cards />
-      <Courses background='gradient' />
-      <Stats />
-      <Work />
-      <Testimonials />
-      <Mentorship />
-      <Podcast />
-      <Events background='gradient' />
-      <Blogs />
-      <NewsLetter />
-      <JoinUs />
-      <FAQ background='gradient' />
-      <Partner />
-      <Footer />
+      <Layout content={HomePageContent}>
+        <Hero />
+        <About />
+        <Courses />
+        <Mentorship />
+        <Events />
+        <Content />
+      </Layout>
       <Banner />
     </>
   );
